@@ -1,0 +1,275 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    transition: background 0.3s;
+}
+.dark-mode {
+    background: #121212;
+    color: #fff;
+}
+.gold{
+    color: gold;
+   
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffcc00;
+    height: 8vh;
+    padding:1em;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+#theme-toggle{
+    width: 6vh;
+    height: 6vh;
+    background-color: #000000;
+    border-radius: 50%;
+    border: none;
+}
+#theme-toggle img{
+    height: 80%;
+    width: auto;
+}
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    background: #222;
+    color: white;
+    text-align: center;
+    .slider {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        .slide {
+            z-index: -1;
+            width: 0%;
+            height: 100%;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: 2em;
+            img{
+                z-index: 2; 
+            }
+        }
+        .active {
+            z-index: 1;
+            width: 100%;
+            opacity: 1;
+        }
+    }
+    .cta-btn {
+        background: gold;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s;
+        width: 10%;
+        height: 15%;
+        display: flex;
+        font-size: 1em;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            background-color: gold;
+            font-size: 1.1em;
+        }
+    }
+}
+#slide-1{
+    background-image: url('../img/Games/Sweet Bonanza 1000/Background/Freegame_BG_5000X1998.png');
+    background-size: cover;
+    flex-direction: column;
+}
+#slide-2{
+    background-image: url('../img/Games/Gates of Olympus/Background/Freegame_BG.png');
+    background-size: cover;
+    flex-direction: row;
+}
+#slide-3{
+    background-image: url('../img/Games/Sweet Bonanza 1000/Background/Basegame_BG_5000X1998.png');
+    background-size: cover;
+    flex-direction: row;
+}
+#slide-4{
+    background-image: url('../img/Games/Wolf Gold Ultimate/Background/Wolf Gold Ultimate_5000x1998_Basegame.png');
+    background-size: cover;
+    flex-direction: row;
+}
+.arrows{
+    background-color: #ffffff00;
+    border: none;
+}
+#steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    height: 20vh;
+    font-size: 1.3em;
+    .step {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease-in-out;
+        display: flex; 
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    .step.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    height: 20vh;
+    font-size: 1.2em;
+    .card {
+        background: #f4f4f4;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        transition: transform 0.3s;
+        height: 100%;
+        h3{
+            height: 20%;
+        }
+        p{
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+#cta {
+    text-align: center;
+    padding: 2rem;
+    height: 40vh;
+    display: flex;
+    font-size: 3em;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    .register-btn {
+        background:gold;
+        width: 18vw;
+        height: 10vh; 
+        border: none;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        display: flex;
+        font-size: 1em;  
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        &:hover {
+            font-size: 1.3em;
+            background:gold;   
+        }
+    }
+}
+
+footer{
+    height: 10vh;
+    display: flex;
+    padding-right: 10%;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #222;
+    font-size: 1.3em;
+    color: #f4f4f4;
+}
+@media (max-width: 1024px) {
+    #steps {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .stepArrow {
+        content: url("https://img.icons8.com/ios-filled/50/down--v1.png");
+    }
+    #hero {
+        .slider {
+            .slide {
+                font-size: 1.5em;   
+            }
+        }
+        .cta-btn {
+            width: 20%;
+            height: 20%;
+        }
+    }
+    #steps {
+        height: 60vh;
+    }
+
+    #features {
+        height: 40vh;
+        .card {  
+            width: 30vw;
+        }
+    }
+    #cta {
+        font-size: 2em;
+        .register-btn {
+            width: 25vw;
+        }
+    }
+}
+@media (max-width: 768px) {
+    #hero {
+        .slider {
+            .slide {
+                font-size: 1.5em;   
+            }
+        }
+        .cta-btn {
+            width: 40%;
+            height: 20%;
+        }
+    }
+    #steps {
+        height: 60vh;
+    }
+    #features {
+        height: 120vh;
+        flex-direction: column;
+        .card { 
+            width: 80vw;
+            height: 30%;
+        }
+    }
+    #cta {
+        font-size: 2em;
+        .register-btn {
+            width: 35vw;
+        }
+    }
+}
